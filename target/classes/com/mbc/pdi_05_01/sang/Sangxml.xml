@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.sang.SangService">
+<resultMap type="com.mbc.pdi_05_01.sang.SangDTO" id="dto">
+<result property="cardnumber" column="cardnumber"   /> <!-- SangDTO에 있는 값 그대로 -->
+<result property="sname" column="sname"   />
+<result property="price" column="price"   />
+<result property="day" column="day"   />
+</resultMap>
+<insert id="sanginsert">insert into sang0328 values(#{param1},#{param2},#{param3},#{param4})</insert>
+<select id="sangselect" resultMap="dto">select * from sang0328</select>
+<select id="spnametotalselect" resultType="com.mbc.pdi_05_01.sang.SangDTO">
+select sname,sum(price)as tot from sang0328 group by sname
+</select>
+<select id="daysnametotselect" resultType="com.mbc.pdi_05_01.sang.SangDTO">
+select to_char(day,'yyyy-MM-dd')day,sname,sum(price)as tot from sang0328 group by day,sname order by day desc
+</select>
+</mapper>

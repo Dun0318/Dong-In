@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.book.BookService">
+<insert id="bookinsert">insert into book0325 values(book0325_sql.nextval,#{param1},#{param2},#{param3},#{param4},#{param5},0)</insert>
+<select id="bookselect" resultType="com.mbc.pdi_05_01.book.BookDTO">select * from book0325</select>
+<update id="countup">update book0325 set count=count+1 where booknumber=#{param1} </update>
+<select id="countupview" resultType="com.mbc.pdi_05_01.book.BookDTO"> select*from book0325 where booknumber=#{param1}</select>
+<select id="bookupdateselect" resultType="com.mbc.pdi_05_01.book.BookDTO"> select*from book0325 where booknumber=#{param1}</select>
+<update id="bookupdatego">update book0325 set bookname=#{param1},writer=#{param2},memo=#{param3},price=#{param4},image=#{param5},count=0 where booknumber=#{param6}</update>
+<update id="bookupdatego2">update book0325 set bookname=#{param1},writer=#{param2},memo=#{param3},price=#{param4},count=0 where booknumber=#{param5}</update>
+<select id="bookdeleteselect" resultType="com.mbc.pdi_05_01.book.BookDTO"> select*from book0325 where booknumber=#{param1}</select>
+<delete id="bookdeletego">delete from book0325 where booknumber=#{param1}</delete>
+<select id="booksearchgo" resultType="com.mbc.pdi_05_01.book.BookDTO"> select * from book0325
+<where>
+	<choose>
+		<when test="param1== 'bookname'">
+		bookname like '%' || #{param2} || '%'
+		</when>
+		<when test="param1== 'writer'">
+		writer like '%' || #{param2} || '%'
+		</when>
+	</choose>
+</where>
+</select>
+</mapper>

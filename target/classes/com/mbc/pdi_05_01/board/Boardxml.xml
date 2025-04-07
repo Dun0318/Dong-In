@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.board.BoardService">
+<insert id="announcementinsert">insert into announcement values(announcement_seq.nextval,#{param1},#{param2})</insert>
+<select id="announcementselect" resultType="com.mbc.pdi_05_01.board.BoardDTO">select * from announcement</select>
+<select id="announcementtext" resultType="com.mbc.pdi_05_01.board.BoardDTO">select * from announcement where num=#{param1}</select>
+
+<insert id="boardinsert">insert into board0331 values(board0331_seq.nextval,#{param1},#{param2},#{param3},sysdate,0,board0331_seq.currval,0,0)</insert>
+<select id="boardselect" resultType="com.mbc.pdi_05_01.board.BoardDTO2">select 
+boardnumber,title,writer,text,to_char(day,'yyyy-MM-dd')day,count,groups,temp,indent
+from board0331 order by groups desc,temp asc</select>
+<select id="detailselect" resultType="com.mbc.pdi_05_01.board.BoardDTO2">select 
+boardnumber,title,writer,text,to_char(day,'yyyy-MM-dd')day,count,groups,temp,indent
+from board0331 where boardnumber=#{param1}</select>
+<select id="replyselect" resultType="com.mbc.pdi_05_01.board.BoardDTO2">select 
+boardnumber,title,writer,text,to_char(day,'yyyy-MM-dd')day,count,groups,temp,indent
+from board0331 where boardnumber=#{param1}</select>
+<update id="countup">update board0331 set count=count+1 where boardnumber=#{param1}</update>
+<insert id="reply">insert into board0331 values(board0331_seq.nextval,#{param1},#{param2},#{param3},sysdate,0,#{param4},#{param5},#{param6})</insert>
+<update id="stetup">update board0331 set temp=temp+1 where groups=#{param1} and temp>#{param2}</update>
+</mapper>

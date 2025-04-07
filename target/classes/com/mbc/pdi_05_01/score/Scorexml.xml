@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.score.ScoreService">
+<insert id="scoreinsert">insert into score0327 values(#{param1},#{param2},#{param3},#{param4},#{param5},#{param6})</insert>
+<select id="scoreselect" resultType="com.mbc.pdi_05_01.score.ScoreDTO">
+select ban,num,name,kor,eng,mat,
+(kor+eng+mat) as tot,
+round((kor+eng+mat)/3.0,1) as aver,
+(case 
+		when round((kor+eng+mat)/3.0,1) >=90 then 'A등급'
+		when round((kor+eng+mat)/3.0,1) >=80 then 'B등급'
+		when round((kor+eng+mat)/3.0,1) >=70 then 'C등급'
+		when round((kor+eng+mat)/3.0,1) >=60 then 'D등급'
+		else 'F등급' end) as rank,
+		rank()over(partition by ban order by(kor+eng+mat)desc) as banrank,
+		rank()over(order by(kor+eng+mat)desc) as allrank
+		from score0327 order by ban asc
+</select>
+
+</mapper>

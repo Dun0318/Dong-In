@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+   <definition name="baseLayout" template="/WEB-INF/views/layout.jsp">
+      <put-attribute name="title" value=""/>
+      <put-attribute name="top" value="/WEB-INF/views/top.jsp"/>
+      <put-attribute name="body" value=""/>
+      <put-attribute name="footer" value="/WEB-INF/views/footer.jsp"/>
+   </definition>
+   
+   <definition name="main" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/main.jsp"/>
+   </definition> 
+   
+   <!-- view member 폴더 -->
+     <definition name="memberinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/member/memberinput.jsp"/>
+   </definition> 
+   <!-- view member 폴더 end -->
+   
+     <!-- memberout  -->
+     <definition name="memberout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/member/memberout.jsp"/>
+   </definition> 
+   <!-- memberout end -->
+   
+    <!-- memberout  -->
+     <definition name="login" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/login/login.jsp"/>
+   </definition> 
+   <!-- memberout end -->
+   <!-- bookinput  -->
+     <definition name="bookinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/bookinput.jsp"/>
+   </definition> 
+   <!-- bookinput end -->
+    <!-- bookiout  -->
+     <definition name="bookout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/bookout.jsp"/>
+   </definition> 
+   <!-- bookout end -->
+   <!-- bookcountupview  -->
+     <definition name="bookcountupview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/bookcountupview.jsp"/>
+   </definition> 
+   <!-- bookcountupview end -->
+    <!-- bookupdateview  -->
+     <definition name="bookupdateview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/bookupdateview.jsp"/>
+   </definition> 
+   <!-- bookupdateview end -->
+   
+   <!-- bookdeleteview  -->
+     <definition name="bookdeleteview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/bookdeleteview.jsp"/>
+   </definition> 
+   <!-- bookdeleteview end -->
+   
+    <!-- booksearch  -->
+     <definition name="booksearch" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/booksearch.jsp"/>
+   </definition> 
+   <!-- booksearch end -->
+   
+    <!-- booksearchview  -->
+     <definition name="booksearchview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/book/booksearchview.jsp"/>
+   </definition> 
+   <!-- booksearchview end -->
+  
+   <!-- companyinput  -->
+     <definition name="companyinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companyinput.jsp"/>
+   </definition> 
+   <!-- companyinput end -->
+  
+   <!--  companyout  -->
+     <definition name="companyout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companyout.jsp"/>
+   </definition> 
+   <!--  companyout end -->
+   
+    <!--  companyupdateview  -->
+     <definition name="companyupdateview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companyupdateview.jsp"/>
+   </definition> 
+   <!--  companyupdateview end -->
+   
+   <!--  companydeleteview -->
+    <definition name="companydeleteview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companydeleteview.jsp"/>
+   </definition> 
+   <!--  companydeleteview end -->
+   
+    <!--  companysearch -->
+    <definition name="companysearch" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companysearch.jsp"/>
+   </definition> 
+   <!--  companysearch end -->
+    <!--  companysearchview -->
+    <definition name="companysearchview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/company/companysearchview.jsp"/>
+   </definition> 
+   <!--  companysearchview end -->
+
+ <!--  scoreinput  -->
+    <definition name="scoreinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/score/scoreinput.jsp"/>
+   </definition> 
+   <!--  scoreinput end -->
+   
+   <!--  scoreout  -->
+    <definition name="scoreout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/score/scoreout.jsp"/>
+   </definition> 
+   <!--  scoreout end -->
+   
+   <!--  sanginput  -->
+    <definition name="sanginput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/sanginput.jsp"/>
+   </definition> 
+   <!--  sanginput end -->
+   
+   <!--  sangout  -->
+    <definition name="sangout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/sangout.jsp"/>
+   </definition> 
+   <!--  sangout end -->
+      
+     <!--  snametotal  -->
+    <definition name="snametotal" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/snametotal.jsp"/>
+   </definition> 
+   <!--  snametotal end -->
+   
+   
+    <!--  daysnametot  -->
+    <definition name="daysnametot" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/daysnametot.jsp"/>
+   </definition> 
+   <!--  daysnametot end -->
+   <!--  myinfoinput  -->
+    <definition name="myinfoinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/myinfoinput.jsp"/>
+   </definition> 
+   <!--  myinfoinput end -->
+    <!--  myinfoout  -->
+    <definition name="myinfoout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/myinfoout.jsp"/>
+   </definition> 
+   <!--  myinfoout end -->
+   
+    <!--  mytotout  -->
+    <definition name="mytotout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/sang/mytotout.jsp"/>
+   </definition> 
+   <!--  mytotout end -->
+   
+   <!--  scoreinfoinput  -->
+   <definition name="scoreinfoinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/ResultMapScore/scoreinfoinput.jsp"/>
+   </definition> 
+   <!--  scoreinfoinput end -->
+   
+   
+   <!--  scoreinput1  -->
+   <definition name="scoreinput1" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/ResultMapScore/scoreinput1.jsp"/>
+   </definition> 
+   <!--  scoreinput1 end -->
+   
+   <!--  scoreinfoout  -->
+   <definition name="scoreinfoout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/ResultMapScore/scoreinfoout.jsp"/>
+   </definition> 
+   <!--  scoreinfoout end -->
+   
+   <!--  announcementinput  -->
+   <definition name="announcementinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/announcementinput.jsp"/>
+   </definition> 
+   <!--  announcementinput end -->
+   <!--  announcementout  -->
+   <definition name="announcementout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/announcementout.jsp"/>
+   </definition> 
+   <!--  announcementout end -->
+   
+   <definition name="announcementtextview" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/announcementtextview.jsp"/>
+   </definition> 
+   <!--  announcementtextview end -->
+   <!--  boardinput -->
+    <definition name="boardinput" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/boardinput.jsp"/>
+   </definition> 
+      <!--  boardinput end -->
+   <!--  boardout end -->
+    <definition name="boardout" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/boardout.jsp"/>
+   </definition> 
+   <!--  boardout end -->
+   
+   
+    <!--  detail end -->
+    <definition name="detail" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/detail.jsp"/>
+   </definition> 
+   <!--  detail end -->
+     <!--   reply end -->
+    <definition name="reply" extends="baseLayout">
+      <put-attribute name="title" value="메인화면"/>
+      <put-attribute name="body" value="/WEB-INF/views/board/reply.jsp"/>
+   </definition> 
+   <!--   reply end -->
+  
+</tiles-definitions>
+
+
+

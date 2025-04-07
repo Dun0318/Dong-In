@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.resultmapscore.ResultScoreService">
+<resultMap type="com.mbc.pdi_05_01.resultmapscore.ResultScoreDTO" id="dto">
+<result property="num" column="num"/>
+<result property="kor" column="kor"/>
+<result property="eng" column="eng"/>
+<result property="mat" column="mat"/>
+</resultMap>
+<resultMap type="com.mbc.pdi_05_01.resultmapscore.ScoreinfoDTO" id="infodto">
+<result property="num" column="num"/>
+<result property="name" column="name"/>
+<result property="phone" column="phone"/>
+<collection property="sdto" ofType="com.mbc.pdi_05_01.resultmapscore.ResultScoreDTO" resultMap="dto"></collection>
+</resultMap>
+<insert id="scoreinfoinsert">insert into myinfo03281 values(#{param1},#{param2},#{param3})</insert>
+<insert id="scoreinsert">insert into score0328 values(#{param1},#{param2},#{param3},#{param4})</insert>
+<select id="out" resultMap="infodto">
+select
+my.num,my.name,my.phone,sc.kor,sc.eng,sc.mat
+from myinfo03281 my,score0328 sc
+where my.num = sc.num
+</select>
+</mapper>

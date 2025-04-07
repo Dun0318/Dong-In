@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mbc.pdi_05_01.sang.MyinfoService">
+
+<resultMap type="com.mbc.pdi_05_01.sang.SangDTO" id="dto">
+<result property="cardnumber" column="cardnumber"   /> <!-- SangDTO에 있는 값 그대로 -->
+<result property="sname" column="sname"   />
+<result property="price" column="price"   />
+<result property="day" column="day"   />
+</resultMap>
+<resultMap type="com.mbc.pdi_05_01.sang.MyinfoDTO" id="mydto">
+<result property="cardnumber" column="cardnumber"/> <!-- MyinfoDTO 안에 있는 값 그대로 -->
+<result property="name" column="name"/>
+<result property="phone" column="phone"/>
+<collection property="sdto" ofType="com.mbc.pdi_05_01.sang.SangDTO" resultMap="dto"></collection> <!-- 2개의 클래스 SangDTO 와 MyinfoDTO를 연결. -->
+<!-- SangDTO 안에 만들어놓은 객체 sdto 를 활용 , 위 oftype="SangDTO의 경로" 와 resultMap="resultmap 생성해 놓은 id이름" 함수를 넣어줌으로써 mydto 안에 담김 -->
+</resultMap>
+
+
+<insert id="myinfoinsert">insert into myinfo0328 values(#{param1},#{param2},#{param3})</insert>
+<select id="myinfoselect" resultType="com.mbc.pdi_05_01.sang.MyinfoDTO">select * from myinfo0328</select>
+<select id="mytot" resultMap="mydto">
+select my.cardnumber,my.name,my.phone,sang.sname,sang.price,sang.day
+from myinfo0328 my,sang0328 sang <!-- myinfo0328을 my로 칭하고 sang0328을 sang으로 칭한다. -->
+where my.cardnumber = sang.cardnumber
+
+</select>
+</mapper>
